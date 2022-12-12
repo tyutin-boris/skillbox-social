@@ -1,3 +1,6 @@
+val jupiterVersion: String by project.properties
+val springBootVersion: String by project.properties
+
 plugins {
     id("java")
 }
@@ -10,8 +13,10 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
+    implementation("org.springframework.boot:spring-boot-starter:$springBootVersion")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$jupiterVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$jupiterVersion")
 }
 
 tasks.getByName<Test>("test") {
